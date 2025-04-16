@@ -7,6 +7,46 @@ The Expense Tracker is a full-stack web application designed to help users track
 - **Development URL**: Access the application via `http://0.0.0.0:5000` when running locally.
 - **MongoDB Connection**: A MongoDB URI is required to connect to the database. This should be set in a `.env` file in the root directory with the key `MONGODB_URI`.
 
+## Tech Stack
+
+The **Expense Tracker Web Application** is built using the following technologies:
+
+### Frontend:
+- **React**: A JavaScript library for building user interfaces.
+- **TypeScript**: A superset of JavaScript that adds static types to help with better tooling and error-checking during development.
+- **TailwindCSS**: A utility-first CSS framework for rapidly building custom designs without leaving HTML.
+- **Shadcn/ui**: A component library for building UI with a modern, accessible design system.
+
+### Backend:
+- **Express.js**: A minimal and flexible Node.js web application framework for building RESTful APIs.
+- **Node.js**: JavaScript runtime built on Chrome's V8 JavaScript engine.
+  
+### Database:
+- **MongoDB**: A NoSQL database for storing user and expense data in a flexible JSON-like format.
+
+### Data Visualization:
+- **Recharts**: A composable charting library built with React, used for visualizing the expense data (pie and bar charts).
+
+### PDF Export:
+- **jsPDF**: A library used to generate PDF documents directly in the browser.
+
+### DevOps/Other:
+- **MongoDB Atlas**: A fully-managed cloud database service for MongoDB.
+- **Git**: A version control system used for tracking changes in the source code during development.
+
+Project Structure
+├── client/               # Frontend React application
+│   ├── src/
+│   │   ├── components/  # React components
+│   │   ├── pages/       # Page components
+│   │   ├── utils/       # Utility functions
+│   │   └── lib/         # Shared libraries
+├── server/              # Backend Express server
+│   ├── routes.ts        # API routes
+│   └── mongodb.ts       # Database configuration
+└── shared/              # Shared TypeScript types
+
+
 ## Features
 
 ### 1. Dashboard
