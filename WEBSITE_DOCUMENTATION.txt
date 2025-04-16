@@ -1,0 +1,180 @@
+
+# Expense Tracker Web Application Documentation
+
+## Overview
+The Expense Tracker is a web-based application that helps users track and manage their expenses with features like categorization, visualization, and export capabilities.
+
+## Access & Setup
+- URL: Access via http://0.0.0.0:5000 in development
+- MongoDB Connection: Required via .env file with MONGODB_URI
+
+## Features
+
+### 1. Dashboard
+Location: /client/src/pages/Dashboard.tsx
+- Summary cards showing total expenses
+- Category-wise expense breakdown
+- Visual charts (Pie and Bar)
+- Recent expenses list
+- Export functionality (CSV/PDF)
+
+### 2. Expenses Page
+Location: /client/src/pages/Expenses.tsx
+- Complete expense listing
+- Filtering options
+- Add/Edit/Delete expenses
+- Export data
+- Search functionality
+
+### 3. Expense Management
+- Add new expenses
+- Edit existing expenses
+- Delete expenses
+- Categorize expenses
+- Add notes and descriptions
+
+### 4. Data Visualization
+- Pie chart for category distribution
+- Bar chart for spending trends
+- Interactive charts with tooltips
+
+### 5. Export Options
+- PDF export with formatted layout
+- CSV export for spreadsheet analysis
+- Custom date range selection
+
+## Components Guide
+
+### 1. ExpenseForm
+Purpose: Add/Edit expense entries
+Fields:
+- Description (required)
+- Amount (required)
+- Category (required)
+- Date (required)
+- Notes (optional)
+
+### 2. ExpenseTable
+Purpose: Display expense listings
+Features:
+- Sortable columns
+- Pagination
+- Action buttons
+- Search functionality
+
+### 3. DateRangeFilter
+Purpose: Filter expenses by date range
+Options:
+- Custom date selection
+- Preset ranges
+
+### 4. Charts
+Components:
+- PieChart: Shows category distribution
+- CategoryChart: Shows spending by category
+
+## User Interface
+
+### 1. Navigation
+- Dashboard: Overview and statistics
+- Expenses: Detailed expense management
+
+### 2. Common Actions
+- Add Expense: '+' button in header
+- Export: Export buttons in dashboard/expenses
+- Filter: Date range filter at top
+- Search: Search bar in expenses page
+
+### 3. Responsive Design
+- Desktop: Full sidebar navigation
+- Mobile: Collapsible menu
+- Adaptive layouts for all screen sizes
+
+## Technical Details
+
+### 1. API Endpoints
+Base URL: /api
+
+Expenses:
+- GET /expenses - List all expenses
+- POST /expenses - Create expense
+- PUT /expenses/:id - Update expense
+- DELETE /expenses/:id - Delete expense
+
+Statistics:
+- GET /expenses/stats/summary - Get expense statistics
+
+### 2. Data Format
+Expense Object:
+```typescript
+{
+  id: number
+  description: string
+  amount: number
+  category: string
+  date: string // YYYY-MM-DD
+  notes?: string
+  userId: number
+  createdAt: string
+}
+```
+
+### 3. Error Handling
+- Form validation errors
+- API error responses
+- Network error handling
+- Loading states
+
+## Security Features
+- Input validation
+- Data sanitization
+- MongoDB query safety
+- Type checking
+
+## Performance
+- React Query for caching
+- Optimized MongoDB queries
+- Lazy loading components
+- Debounced search
+
+## Browser Support
+- Modern browsers (Chrome, Firefox, Safari, Edge)
+- Responsive design for mobile devices
+- Progressive enhancement
+
+## Troubleshooting
+
+Common Issues:
+1. Connection Error
+   - Check MongoDB connection string
+   - Verify network connectivity
+
+2. Data Not Loading
+   - Check API endpoints
+   - Verify data filters
+
+3. Export Issues
+   - Check date range selection
+   - Verify data availability
+
+## Best Practices
+
+1. Data Entry
+   - Use clear descriptions
+   - Categorize expenses correctly
+   - Include relevant notes
+
+2. Data Management
+   - Regular exports for backup
+   - Periodic review of categories
+   - Maintain consistent naming
+
+3. Performance
+   - Use date filters for large datasets
+   - Clear browser cache if needed
+   - Regular database maintenance
+
+## Support & Resources
+- Technical Documentation: See TECHNICAL_DOCUMENTATION.txt
+- Setup Guide: See README.md
+- API Documentation: Available in-code comments
